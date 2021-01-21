@@ -1,0 +1,28 @@
+name: Twilio # The name of the App
+options: # Some general settings for the project
+  createIntermediateGroups: true # If the folders are nested, also nest the groups in Xcode
+  bundleIdPrefix: "com.sdbt"
+packages:
+  TwilioVerify:
+    url: https://github.com/twilio/twilio-verify-ios.git
+    from: 0.2.0
+targets: # The List of our targets
+  Twilio:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: Twilio
+    postCompileScripts:
+      - path: Scripts/swiftlint.sh
+        name: Run swiftlint
+    dependencies:
+      - package: TwilioVerify
+  TwilioTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: TwilioTests
+    dependencies:
+      - target: Twilio
