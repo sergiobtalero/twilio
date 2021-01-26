@@ -8,9 +8,20 @@
 import TwilioVerify
 import Foundation
 
+struct ChallengeContainer: Identifiable {
+    let id: UUID
+    let challenge: Challenge
+    
+    init(challenge: Challenge) {
+        id = UUID()
+        self.challenge = challenge
+    }
+}
+
 struct FactorContainer: Identifiable {
     let id: UUID
     var factor: Factor
+    var challenges: [ChallengeContainer] = []
     
     init(factor: Factor) {
         id = UUID()

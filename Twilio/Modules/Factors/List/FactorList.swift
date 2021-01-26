@@ -39,7 +39,9 @@ struct FactorList: View {
             }
             ActivityIndicator(isAnimating: $isLoading, style: .large)
             List(userInformation.containers) { container in
-                FactorView(container: container)
+                NavigationLink(destination: ChallengesView(container: container)) {
+                    FactorView(container: container)
+                }
             }
         }.navigationTitle("Factors")
         .navigationBarItems(trailing:
