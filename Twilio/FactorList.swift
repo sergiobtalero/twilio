@@ -12,6 +12,7 @@ struct FactorList: View {
     @EnvironmentObject var userInformation: UserInfomation
     @State var error: TwilioVerifyError?
     @State var isLoading = false
+    @State var showCreateFactorView = false
     
     private func getFactorsList() {
         isLoading = true
@@ -26,13 +27,24 @@ struct FactorList: View {
 
     }
     
+    private func didTapAddFactor() {
+        showCreateFactorView = true
+    }
+    
     var body: some View {
         ZStack {
+            NavigationLink(destination: CreateFactor(),
+                           isActive: $showCreateFactorView) {
+                EmptyView()
+            }
             ActivityIndicator(isAnimating: $isLoading, style: .large)
             List(userInformation.containers) { container in
-                Text("Factor \(container.factor.accountSid)")
+                FactorView(container: container)
             }
         }.navigationTitle("Factors")
+        .navigationBarItems(trailing:
+            Button("Add", action: { self.didTapAddFactor() })
+        )
         .onAppear {
             getFactorsList()
         }
