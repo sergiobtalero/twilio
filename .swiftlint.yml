@@ -14,14 +14,12 @@ disabled_rules:
   - trailing_whitespace
 
 included: # paths to include during linting. `--path` is ignored if present.
-  - Pokedex
-  - Data 
-  - Domain
+  - Twilio
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   # - Carthage
   # - Pods
-  - Pokedex/Base/AppDelegate.swift
-  - Pokedex/Base/SceneDelegate.swift
+  # - Twilio/Base/AppDelegate.swift
+  # - Twilio/Base/SceneDelegate.swift
 analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
   - explicit_self
 

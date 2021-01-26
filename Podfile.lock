@@ -1,0 +1,22 @@
+PODS:
+  - TwilioVerify (0.2.0)
+
+DEPENDENCIES:
+  - TwilioVerify (from `https://github.com/twilio/twilio-verify-ios`, branch `dev`)
+
+EXTERNAL SOURCES:
+  TwilioVerify:
+    :branch: dev
+    :git: https://github.com/twilio/twilio-verify-ios
+
+CHECKOUT OPTIONS:
+  TwilioVerify:
+    :commit: 41ef89e5a8017de4efe00e43a9d9c0e5b644b1e3
+    :git: https://github.com/twilio/twilio-verify-ios
+
+SPEC CHECKSUMS:
+  TwilioVerify: 90b7abb3647ace16d8f60e62d6f5e7ab78e6bfda
+
+PODFILE CHECKSUM: 0d5bf49e1d7edd2fe214745b4eeb19a545f6a0ad
+
+COCOAPODS: 1.10.1
